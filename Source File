@@ -1,0 +1,181 @@
+Books = []
+Students = []
+
+# Book Management
+def add_book():
+    B_id = input("Enter the Book ID: ")
+    Name = input("Enter the Book Name: ")
+    Auth = input("Enter the Author's Name: ")
+    Book = [B_id, Name, Auth, "Available"]
+    Books.append(Book)
+    print("Book has been added successfully.")
+def remove_book():
+    B_id = input("Enter the Book ID of the book to remove:")
+    for Book in Books:
+        if Book[0] == B_id:
+            Books.remove(Book)
+            print("Book has been removed successfully.")
+            return
+    print("Book not found.")
+def search_book():
+    B_id = input("Enter Book ID to search: ")
+    for Book in Books:
+        if Book[0] == B_id:
+            print("Book ID:", Book[0])
+            print("Book Name:", Book[1])
+            print("Author:", Book[2])
+            print("Status:", Book[3])
+            return
+    print("Book not found.")
+# Student Management
+def add_student():
+    S_id = input("Enter Student ID: ")
+    Name = input("Enter Student Name: ")
+    Course = input("Enter Course: ")
+    Stud = [S_id, Name, Course]
+    Students.append(Stud)
+    print("Student added successfully.")
+def remove_student():
+    S_id = input("Enter Student ID to remove: ")
+    for Stud in Students:
+        if Stud[0] == S_id:
+            Students.remove(Stud)
+            print("Student removed successfully.")
+            return
+    print("Student not found.")
+def search_student():
+    S_id = input("Enter Student ID to search: ")
+    for stud in Students:
+        if stud[0] == S_id:
+            print("Student ID:", Stud[0])
+            print("Student Name:", Stud[1])
+            print("Course:", Stud[2])
+            return
+    print("Student not found.")
+def display_students():
+    if len(Students) == 0:
+        print("No students found.")
+    else:
+        print("\nStudents in the Library System:")
+        for Stud in Students:
+            print("ID:", Stud[0])
+            print("Name:", Stud[1])
+            print("Course:", Stud[2])
+            print("--------------------")
+
+# Borrow and Return
+def issue_book():
+    B_id = input("Enter Book ID: ")
+    S_id = input("Enter Student ID: ")
+    stud_exists = False
+    for stud in Students:
+        if stud[0] == S_id:
+            stud_exists = True
+    if stud_exists == False:
+        print("Student not found.")
+        return
+    for Book in Books:
+        if Book[0] == B_id:
+            if Book[3] == "Available":
+                Book[3] = "Issued"
+                print("Book issued successfully.")
+            else:
+                print("Book is already issued.")
+            return
+    print("Book not found.")
+def return_book():
+    B_id = input("Enter Book ID to return: ")
+    for Book in Books:
+        if Book[0] == B_id:
+            if Book[3] == "Issued":
+                Book[3] = "Available"
+                print("Book returned successfully.")
+            else:
+                print("This book is already available.")
+            return
+    print("Book not found.")
+def check_availability():
+    B_id = input("Enter Book ID: ")
+    for Book in Books:
+        if Book[0] == B_id:
+            if Book[3] == "Available":
+                print("Book is available.")
+            else:
+                print("Book is currently issued.")
+            return
+    print("Book not found.")
+
+# Main Program
+while True:
+    print("\n===== LIBRARY MANAGEMENT SYSTEM =====")
+    print("1. Book Management")
+    print("2. Student Management")
+    print("3. Borrow / Return")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+
+    # Book menu
+    if choice == "1":
+        while True:
+            print("\n--- Book Management ---")
+            print("1. Add Book")
+            print("2. Remove Book")
+            print("3. Search Book")
+            print("4. Back")
+            ch = input("Enter your choice: ")
+            if ch == "1":
+                add_book()
+            elif ch == "2":
+                remove_book()
+            elif ch == "3":
+                search_book()
+            elif ch == "4":
+                break
+            else:
+                print("Invalid choice.")
+    # Student menu
+    elif choice == "2":
+        while True:
+            print("\n--- Student Management ---")
+            print("1. Add Student")
+            print("2. Remove Student")
+            print("3. Search Student")
+            print("4. Display Students")
+            print("5. Back")
+            ch = input("Enter your choice: ")
+            if ch == "1":
+                add_student()
+            elif ch == "2":
+                remove_student()
+            elif ch == "3":
+                search_student()
+            elif ch == "4":
+                display_students()
+            elif ch == "5":
+                break
+            else:
+                print("Invalid choice.")
+    # Borrow and Return menu
+    elif choice == "3":
+        while True:
+            print("\n--- Borrow / Return ---")
+            print("1. Issue Book")
+            print("2. Return Book")
+            print("3. Check Availability")
+            print("4. Back")
+            ch = input("Enter your choice: ")
+            if ch == "1":
+                issue_book()
+            elif ch == "2":
+                return_book()
+            elif ch == "3":
+                check_availability()
+            elif ch == "4":
+                break
+            else:
+                print("Invalid choice.")
+    elif choice == "4":
+        print("Thank you for using the Library Management System.")
+        break
+    else:
+        print("Invalid choice.")
