@@ -112,5 +112,6 @@ Some features that can be added in the future are:
 
 ## Author
 
-Hemanga Kalita
-VIT Bhopal University
+**Hemanga Kalita**  
+**26BCE10990**  
+**VIT Bhopal University**
