@@ -65,8 +65,7 @@ Library-Management-System/
 ├── book_management.py
 ├── student_management.py
 ├── borrow_return.py
-├── README.md
-└── Library_Management_System_Project_Report.pdf
+└── README.md
 ```
 
 ## How It Works
