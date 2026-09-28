@@ -61,9 +61,12 @@ python library_management.py
 
 ```text
 Library-Management-System/
-│
-├── Library_Management_System.ipynb
-└── README.md
+├── main.py
+├── book_management.py
+├── student_management.py
+├── borrow_return.py
+├── README.md
+└── Library_Management_System_Project_Report.pdf
 ```
 
 ## How It Works
