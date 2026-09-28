@@ -45,8 +45,8 @@ def remove_student():
     print("Student not found.")
 def search_student():
     S_id = input("Enter Student ID to search: ")
-    for stud in Students:
-        if stud[0] == S_id:
+    for Stud in Students:
+        if Stud[0] == S_id:
             print("Student ID:", Stud[0])
             print("Student Name:", Stud[1])
             print("Course:", Stud[2])
