@@ -169,6 +169,6 @@ Library-Management-System/
 
 ## 👨‍💻 Author
 
-**Hemanga Kalita**
-**26BCE10990**
+**Hemanga Kalita**<br>
+**26BCE10990**<br>
 **VIT Bhopal University**
